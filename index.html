@@ -14,7 +14,7 @@
 <body>
     <h1>Hangman!</h1>
     <img src="http://via.placeholder.com/350x350" alt="hangman"/>
-    <div class="currentWord">Current word</div>
+    <div class="currentWord" id="current">Current word</div>
     <div class="statsContainer">
         <div class="score">
             Wins/losses
@@ -24,7 +24,7 @@
         </div>        
     </div><!--statsContainer-->
     <div class="keyboard" id="keys">
-        <div class="keyRow1">
+        <div class="keyRow">
             <button>Q</button>
             <button>W</button>
             <button>E</button>
@@ -36,7 +36,7 @@
             <button>O</button>
             <button>P</button>
         </div>
-        <div class="keyRow2">
+        <div class="keyRow">
             <button>A</button>
             <button>S</button>
             <button>D</button>
@@ -47,7 +47,7 @@
             <button>K</button>
             <button>L</button>
         </div>
-        <div class="keyRow3">
+        <div class="keyRow">
             <button>Z</button>
             <button>X</button>
             <button>C</button>
