@@ -1,0 +1,20 @@
+body {
+    display: block;
+    text-align: center;
+}
+
+.score {
+    display: inline-block;
+    height: 100px;
+}
+
+.guesses {
+    display: inline-block;
+    height: 100px;
+}
+
+@media screen and (min-width: 768px) {
+    .keyboard>div>button {
+        display: none;
+    }
+}
