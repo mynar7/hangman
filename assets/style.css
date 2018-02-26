@@ -75,8 +75,8 @@ button {
     float: left;
     color: white;
     border: 3px rgba(127, 92, 209, 0.678) solid;
-    width: 34px;
-    height: 32px;
+    width: 37px;
+    height: 35px;
     margin: none;
 }
 
@@ -88,7 +88,7 @@ button:disabled {
     background-color: rgba(182, 163, 235, 0.829);
     color: rgb(71, 70, 70);
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 320px) {
     button {
         width: 28px;
         height: 30px;
