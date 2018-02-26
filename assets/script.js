@@ -147,7 +147,7 @@ var hangman = {
         if (hangman.remainingGuesses > 0) {
 
             var x = event.key.toLowerCase();
-            var y = event.keyCode()
+            var y = event.keyCode();
             console.log("key to lower, keycode", x, y);
             
             //check if a-z
