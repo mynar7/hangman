@@ -15,6 +15,10 @@ body {
 h1 {
     font-size: 30px;
 }
+
+h2 {
+    display: none;
+}
 img {
     background-color: rgba(57, 28, 136, 0.698);
     border-right: 2px white dotted;
@@ -75,8 +79,8 @@ button {
     color: white;
     border: 3px rgba(127, 92, 209, 0.678) solid;
     padding: 0;
-    width: 30px;
-    height: 27px;
+    width: 36px;
+    height: 33px;
     margin: none;
 }
 
@@ -95,6 +99,10 @@ button:disabled {
         max-width: 968px;
         margin: auto;
         font-size: 30px;
+    }
+    h2 {
+        display: inherit;
+        margin-bottom: 20px;
     }
     .currentWord {
         float: right;
