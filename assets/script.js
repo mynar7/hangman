@@ -147,15 +147,18 @@ var hangman = {
         if (hangman.remainingGuesses > 0) {
 
             var x = event.key.toLowerCase();
-            console.log(x);
+            var y = event.keyCode()
+            console.log("key to lower, keycode", x, y);
             
-            //ensure pressed key is not already guessed
-            if (hangman.guesses.indexOf(x) == -1) {
-                hangman.guesses.push(x);
-                hangman.guessWord();
-            }
-            console.log(hangman.guesses);
-            
+            //check if a-z
+            if (y >= 65 && y <= 90) {
+                //ensure pressed key is not already guessed
+                if (hangman.guesses.indexOf(x) == -1) {
+                    hangman.guesses.push(x);
+                    hangman.guessWord();
+                }
+                console.log(hangman.guesses);
+            } //end check if a-z
         }//end if for remainingGuesses check
     },
     
