@@ -22,7 +22,7 @@ var hangman = {
         //reset image
         hangman.drawGallows();
         //reset guess count on page        
-        document.getElementById("guesses").innerHTML = "Remaining Guesses: " + hangman.remainingGuesses;
+        document.getElementById("guesses").innerHTML = "Guesses: " + hangman.remainingGuesses;
         //reset buttons
         hangman.resetBtns();
         //get a word
@@ -99,7 +99,7 @@ var hangman = {
         hangman.blankWord = x;
         //update board
         document.getElementById("current").innerHTML = hangman.addSpaces(hangman.blankWord);
-        document.getElementById("guesses").innerHTML = "Remaining Guesses: " + hangman.remainingGuesses + "<br>" + hangman.guesses;
+        document.getElementById("guesses").innerHTML = "Guesses: " + hangman.remainingGuesses + "<br>" + hangman.guesses;
         //check if won/lost
         if (hangman.blankWord === hangman.currentWord) {
             hangman.endGame("win");

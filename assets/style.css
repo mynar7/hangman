@@ -11,10 +11,6 @@ body {
     font-family: Silkscreen;
     src: url(./Silkscreen/slkscr.ttf);
 }
-.score {
-    display: inline-block;
-    height: 100px;
-}
 
 h1 {
     font-size: 30px;
@@ -30,13 +26,20 @@ img {
 .currentWord {
     border: white 2px dotted;
     font-size: 27px;
-    padding: 30px;
+    padding: 8px;
+    width: 80%;
     background-color: rgba(57, 28, 136, 0.698);
+    margin: auto;
+}
+
+.score {
+    display: inline-block;
+    height: 50px;
 }
 
 .guesses {
     display: inline-block;
-    height: 100px;
+    height: 50px;
 }
 
 .keyRow {
@@ -70,8 +73,8 @@ button {
     color: white;
     border: 3px rgba(127, 92, 209, 0.678) solid;
     padding: 0;
-    width: 40px;
-    height: 30px;
+    width: 30px;
+    height: 27px;
     margin: none;
 }
 
