@@ -26,8 +26,8 @@ img {
 }
 .currentWord {
     border: white 2px dotted;
-    font-size: 27px;
-    padding: 8px;
+    font-size: 25px;
+    padding: 8px 0;
     width: 80%;
     background-color: rgba(57, 28, 136, 0.698);
     margin: auto;
@@ -60,7 +60,7 @@ img {
 }
 
 .ctrlBtnGrp>button {
-    width: 120px;
+    width: 110px;
 }
 
 .ctrlBtnGrp button:not(:last-child) {
@@ -75,8 +75,8 @@ button {
     float: left;
     color: white;
     border: 3px rgba(127, 92, 209, 0.678) solid;
-    width: 36px;
-    height: 33px;
+    width: 34px;
+    height: 32px;
     margin: none;
 }
 
@@ -87,6 +87,28 @@ button:after {
 button:disabled {
     background-color: rgba(182, 163, 235, 0.829);
     color: rgb(71, 70, 70);
+}
+@media screen and (max-width: 360px) {
+    button {
+        width: 28px;
+        height: 30px;
+    }
+
+    .ctrlBtnGrp>button {
+        width: 90px;
+    }
+}
+@media screen and (min-width: 650px) {
+    body {
+        font-size: 25px;
+    }
+    h1{
+        font-size: 75px;
+    }
+    button {
+        width: 60px;
+        height: 55px;
+    }
 }
 
 @media screen and (min-width: 961px) {
