@@ -66,9 +66,6 @@ img {
 .ctrlBtnGrp button:not(:last-child) {
     border-right: none;
 }
-.keyRow>button{
-    width: 40px;
-}
 button {
     font-family: inherit;
     font-size: inherit;
@@ -78,6 +75,7 @@ button {
     float: left;
     color: white;
     border: 3px rgba(127, 92, 209, 0.678) solid;
+    width: 36px;
     height: 33px;
     margin: none;
 }
