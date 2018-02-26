@@ -16,9 +16,6 @@ h1 {
     font-size: 30px;
 }
 
-h2 {
-    display: none;
-}
 img {
     background-color: rgba(57, 28, 136, 0.698);
     border-right: 2px white dotted;
@@ -47,6 +44,7 @@ img {
 }
 .keyboard {
     display: grid;
+    width: 100%;
 }
 .keyRow {
     margin: auto;
@@ -68,7 +66,9 @@ img {
 .ctrlBtnGrp button:not(:last-child) {
     border-right: none;
 }
-
+.keyRow>button{
+    width: 40px;
+}
 button {
     font-family: inherit;
     font-size: inherit;
@@ -78,8 +78,6 @@ button {
     float: left;
     color: white;
     border: 3px rgba(127, 92, 209, 0.678) solid;
-    padding: 0;
-    width: 36px;
     height: 33px;
     margin: none;
 }
@@ -100,9 +98,8 @@ button:disabled {
         margin: auto;
         font-size: 30px;
     }
-    h2 {
-        display: inherit;
-        margin-bottom: 20px;
+    h2:before {
+        content: "Use Keyboard to Play!";
     }
     .currentWord {
         float: right;
