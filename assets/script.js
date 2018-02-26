@@ -151,7 +151,7 @@ var hangman = {
             console.log("key to lower, keycode", x, y);
             
             //check if a-z
-            if (y >= 65 && y <= 90) {
+            if ((y >= 65 && y <= 90) || (y >= 97 && y <= 122)) {
                 //ensure pressed key is not already guessed
                 if (hangman.guesses.indexOf(x) == -1) {
                     hangman.guesses.push(x);
