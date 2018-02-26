@@ -30,9 +30,9 @@ var hangman = {
         console.log(hangman.currentWord);
         
         //get blanks to display
-        var x = "*";
+        var x = "_";
         for (i = 0, j = hangman.currentWord.length - 1; i < j; i++) {
-            x+="*";            
+            x+="_";            
         }
         hangman.blankWord = x;
         //display blanks

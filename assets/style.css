@@ -1,11 +1,37 @@
 body {
     display: block;
     text-align: center;
+    background-color: rgba(55, 36, 107, 0.877);
+    background-image: url('./images/seamless.svg');
+    color: white;
+    font-family: Silkscreen;
+    font-size: 20px;
 }
-
+@font-face {
+    font-family: Silkscreen;
+    src: url(./Silkscreen/slkscr.ttf);
+}
 .score {
     display: inline-block;
     height: 100px;
+}
+
+h1 {
+    font-size: 30px;
+}
+img {
+    background-color: rgba(57, 28, 136, 0.698);
+    border-right: 2px white dotted;
+    border-left: 2px white dotted;
+    border-top: 2px white dotted;
+    
+    
+}
+.currentWord {
+    border: white 2px dotted;
+    font-size: 27px;
+    padding: 30px;
+    background-color: rgba(57, 28, 136, 0.698);
 }
 
 .guesses {
@@ -13,8 +39,73 @@ body {
     height: 100px;
 }
 
+.keyRow {
+    display: inline-block;
+}
+.keyRow button:not(:last-child) {
+    border-right: none;
+}
+
+.ctrlBtnGrp {
+    display: inline-block;
+    clear: both;
+    margin: auto;
+}
+
+.ctrlBtnGrp>button {
+    width: 120px;
+}
+
+.ctrlBtnGrp button:not(:last-child) {
+    border-right: none;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: rgb(57, 28, 136);
+    transition: background-color 0.5s;
+    border-radius: 5px;
+    float: left;
+    color: white;
+    border: 3px rgba(127, 92, 209, 0.678) solid;
+    padding: 0;
+    width: 40px;
+    height: 30px;
+    margin: none;
+}
+
+button:hover {
+    background-color: rgba(182, 163, 235, 0.829);
+}
+
+button:after {
+    content: "";
+}
+
+button:disabled {
+    color: gray;
+}
+
 @media screen and (min-width: 768px) {
+    body {
+        background-image: url('./images/computer.svg');
+        max-width: 968px;
+        margin: auto;
+    }
+    h1 {
+        font-size: 40px;
+        padding: 30px;
+    }
     .keyboard>div>button {
         display: none;
     }
+    img {
+        float: left;
+        margin: left
+    }
+    .ctrlBtnGrp {
+        clear: both;
+    }
+
 }
