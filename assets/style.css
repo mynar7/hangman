@@ -41,9 +41,11 @@ img {
     display: inline-block;
     height: 50px;
 }
-
+.keyboard {
+    display: grid;
+}
 .keyRow {
-    display: inline-block;
+    margin: auto;
 }
 .keyRow button:not(:last-child) {
     border-right: none;
@@ -68,6 +70,7 @@ button {
     font-size: inherit;
     background-color: rgb(57, 28, 136);
     border-radius: 5px;
+    display: inline-block;
     float: left;
     color: white;
     border: 3px rgba(127, 92, 209, 0.678) solid;
@@ -86,14 +89,34 @@ button:disabled {
     color: rgb(71, 70, 70);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 961px) {
     body {
         background-image: url('./images/computer.svg');
         max-width: 968px;
         margin: auto;
+        font-size: 30px;
+    }
+    .currentWord {
+        float: right;
+        max-width: 60%;
+        font-size: 35px;
+        padding: 5% 0.5%;
+        margin-bottom: 100px;
+    }
+   
+    .statsContainer {
+        padding: 150px 0;
+    }
+    .guesses {
+        max-width: 420px;
+    }
+
+    .score {
+        float: left;
+        margin-left: 50px;
     }
     h1 {
-        font-size: 40px;
+        font-size: 100px;
         padding: 30px;
     }
     .keyboard>div>button {
@@ -101,10 +124,18 @@ button:disabled {
     }
     img {
         float: left;
-        margin: left
+        margin: left;
+        border-bottom: 2px white dotted;        
     }
     .ctrlBtnGrp {
         clear: both;
+        margin: auto;
+        position: relative;
+        top: 240px;
+    }
+    .ctrlBtnGrp>button {
+        height: 70px;
+        width: 270px;
     }
 
 }
