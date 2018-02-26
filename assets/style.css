@@ -67,7 +67,6 @@ button {
     font-family: inherit;
     font-size: inherit;
     background-color: rgb(57, 28, 136);
-    transition: background-color 0.5s;
     border-radius: 5px;
     float: left;
     color: white;
@@ -78,16 +77,13 @@ button {
     margin: none;
 }
 
-button:hover {
-    background-color: rgba(182, 163, 235, 0.829);
-}
-
 button:after {
     content: "";
 }
 
 button:disabled {
-    color: gray;
+    background-color: rgba(182, 163, 235, 0.829);
+    color: rgb(71, 70, 70);
 }
 
 @media screen and (min-width: 768px) {
