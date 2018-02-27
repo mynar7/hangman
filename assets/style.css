@@ -1,4 +1,3 @@
-body {
     display: block;
     text-align: center;
     background-color: rgba(55, 36, 107, 0.877);
@@ -6,8 +5,8 @@ body {
     color: white;
     font-family: Silkscreen;
     font-size: 20px;
-    min-width: 375px;
     margin: 0 auto;
+    width: 100%;
 }
 @font-face {
     font-family: Silkscreen;
@@ -46,30 +45,40 @@ img {
 }
 .keyboard {
     display: grid;
-    width: 100%;
-    min-width: 375px;
 }
 .keyRow {
-    margin: auto;
+    width:100%;
 }
 .keyRow button:not(:last-child) {
     border-right: none;
 }
 
+.keyRow:nth-Child(2) {
+    margin-left: 5%;
+}
+
+.keyRow:nth-Child(3) {
+    margin-left: 15%;
+}
+
 .ctrlBtnGrp {
     display: inline-block;
     clear: both;
+    width: 100%;
     margin: auto;
 }
 
 .ctrlBtnGrp>button {
-    width: 110px;
+    width: 33.3%;
 }
 
 .ctrlBtnGrp button:not(:last-child) {
     border-right: none;
 }
 button {
+    width: 10%;
+    height: 36px;
+    box-sizing: border-box;
     font-family: inherit;
     font-size: inherit;
     background-color: rgb(57, 28, 136);
@@ -78,9 +87,7 @@ button {
     float: left;
     color: white;
     border: 3px rgba(127, 92, 209, 0.678) solid;
-    width: 36px;
-    height: 35px;
-    margin: none;
+    
 }
 
 button:after {
@@ -91,32 +98,13 @@ button:disabled {
     background-color: rgba(182, 163, 235, 0.829);
     color: rgb(71, 70, 70);
 }
-@media screen and (max-width: 320px) {
-    body {
-        min-width: 320px;
-    }
-    .keyboard {
-        min-width: 320px;
-    }
-    button {
-        width: 28px;
-        height: 30px;
-    }
 
-    .ctrlBtnGrp>button {
-        width: 90px;
-    }
-}
 @media screen and (min-width: 768px) {
     body {
-        font-size: 25px;
+        font-size: 30px;
     }
     h1{
-        font-size: 75px;
-    }
-    button {
-        width: 60px;
-        height: 55px;
+        font-size: 80px;
     }
 }
 
