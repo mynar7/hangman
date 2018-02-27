@@ -6,6 +6,7 @@ body {
     color: white;
     font-family: Silkscreen;
     font-size: 20px;
+    min-width: 360px;
 }
 @font-face {
     font-family: Silkscreen;
@@ -88,7 +89,10 @@ button:disabled {
     background-color: rgba(182, 163, 235, 0.829);
     color: rgb(71, 70, 70);
 }
-@media screen and (max-width: 358px) {
+@media screen and (max-width: 320px) {
+    body {
+        min-width: none;
+    }
     button {
         width: 28px;
         height: 30px;
@@ -101,6 +105,7 @@ button:disabled {
 @media screen and (min-width: 650px) {
     body {
         font-size: 25px;
+        min-width: none;
     }
     h1{
         font-size: 75px;
@@ -115,6 +120,7 @@ button:disabled {
     body {
         background-image: url('./images/computer.svg');
         max-width: 968px;
+        min-width: none;
         margin: auto;
         font-size: 30px;
     }
