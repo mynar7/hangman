@@ -145,7 +145,7 @@ button:disabled {
         padding: 150px 0;
     }
     .guesses {
-        max-width: 420px;
+        max-width: 300px;
     }
 
     .score {

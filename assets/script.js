@@ -26,9 +26,7 @@ var hangman = {
         //reset buttons
         hangman.resetBtns();
         //get a word
-        hangman.currentWord = hangman.getWord(hangman.words);
-        console.log(hangman.currentWord);
-        
+        hangman.currentWord = hangman.getWord(hangman.words);        
         //get blanks to display
         var x = "_";
         for (i = 0, j = hangman.currentWord.length - 1; i < j; i++) {
@@ -37,7 +35,6 @@ var hangman = {
         hangman.blankWord = x;
         //display blanks
         document.getElementById("current").innerHTML = hangman.addSpaces(hangman.blankWord);
-        console.log(hangman.blankWord);
     },
 
     //code for game over
@@ -52,6 +49,7 @@ var hangman = {
         document.getElementById("skip").setAttribute("disabled", "true");
         if (str === "win") {
             //code for win
+            document.getElementById("gallows").setAttribute("src", "./assets/images/win.png");            
             hangman.wins++;
         } else {
             //code for loss
@@ -76,7 +74,6 @@ var hangman = {
         //get last entry in guesses array
         var char = hangman.guesses[hangman.guesses.length - 1];
         var changedLetters = 0;        
-        console.log("last guess", char);
         //check guess char over each char in current[]
         for(a = 0, b = current.length; a < b; a++) {
             if (char == current[a]) {
@@ -133,10 +130,8 @@ var hangman = {
             if (hangman.guesses.indexOf(x) == -1) {
                 hangman.guesses.push(x);
             }
-            console.log(x);
             //disable clicked button
             e.target.setAttribute("disabled", "true");
-            console.log(hangman.guesses);
             hangman.guessWord();
             
         }//end if guesses > 0
@@ -145,41 +140,34 @@ var hangman = {
     //takes pressed keys
     keyGuess: function(event) {
         if (hangman.remainingGuesses > 0) {
-
+            //store char of key
             var x = event.key.toLowerCase();
+            //get ASCII value, because using onkeypress, not keyup/down
             var y = event.keyCode;
-            console.log("key to lower, keycode", x, y);
             
-            //check if a-z
+            //check if a-z with ASCII values
             if ((y >= 65 && y <= 90) || (y >= 97 && y <= 122)) {
                 //ensure pressed key is not already guessed
                 if (hangman.guesses.indexOf(x) == -1) {
                     hangman.guesses.push(x);
                     hangman.guessWord();
                 }
-                console.log(hangman.guesses);
             } //end check if a-z
         }//end if for remainingGuesses check
     },
     
     //enables all buttons
     resetBtns: function() {
-        console.log("reset");
         var x = document.getElementById("keys").querySelectorAll('button');
-        console.log(x);
         for (i = 0, j = x.length; i < j; i++) {
-            console.log(x[i]);
             x[i].removeAttribute("disabled");
         }
     },
 
     //disables all buttons
     disableBtns: function() {
-        console.log("disable");
         var x = document.getElementById("keys").querySelectorAll('button');
-        console.log(x);
         for (i = 0, j = x.length; i < j; i++) {
-            console.log(x[i]);
             x[i].setAttribute("disabled", "true");
         }
     },
@@ -196,12 +184,11 @@ var hangman = {
 
 //new awesome way of grabbing clicked buttons
 var x = document.getElementById("keys").querySelectorAll("button");
-console.log(x);
 for (i = 0, j = x.length; i < j; i++){
     x[i].addEventListener('click', hangman.clickGuess);
 }
 
-
+//add listeners
 document.getElementById("play").onclick = hangman.play;
 document.getElementById("skip").onclick = hangman.endGame;
 document.getElementById("define").onclick = function () {
@@ -209,5 +196,6 @@ document.getElementById("define").onclick = function () {
 }
 document.onkeypress = hangman.keyGuess;
 
+//start game when document loads
 hangman.play();
 
