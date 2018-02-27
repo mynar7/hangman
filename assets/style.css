@@ -46,6 +46,7 @@ img {
 }
 .keyboard {
     display: grid;
+    overflow: hidden;
 }
 .keyRow {
     width:100%;
@@ -107,6 +108,10 @@ button:disabled {
     h1{
         font-size: 80px;
     }
+
+    button {
+        height: 70px;
+    }
 }
 
 @media screen and (min-width: 961px) {
@@ -157,7 +162,7 @@ button:disabled {
     }
     .ctrlBtnGrp>button {
         height: 70px;
-        width: 270px;
+        /* width: 270px; */
     }
 
 }
