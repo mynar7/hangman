@@ -78,7 +78,7 @@ img {
     border-right: none;
 }
 button {
-    width: 10%;
+    width: 9.9%;
     height: 36px;
     box-sizing: border-box;
     font-family: inherit;
@@ -88,6 +88,7 @@ button {
     display: inline-block;
     float: left;
     color: white;
+    padding: 0;
     border: 3px rgba(127, 92, 209, 0.678) solid;
     
 }
@@ -109,8 +110,15 @@ button:disabled {
         font-size: 80px;
     }
 
+    .currentWord {
+        font-size: 45px;
+    }
+
     button {
         height: 70px;
+    }
+    .guesses, .score {
+        margin: 30px 0;
     }
 }
 
@@ -162,7 +170,6 @@ button:disabled {
     }
     .ctrlBtnGrp>button {
         height: 70px;
-        /* width: 270px; */
     }
 
 }
