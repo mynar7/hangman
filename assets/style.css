@@ -47,7 +47,7 @@ img {
 .keyboard {
     display: grid;
     width: 100%;
-    min-width: inherit;
+    min-width: 375px;
 }
 .keyRow {
     margin: auto;
@@ -93,6 +93,9 @@ button:disabled {
 }
 @media screen and (max-width: 320px) {
     body {
+        min-width: 320px;
+    }
+    .keyboard {
         min-width: 320px;
     }
     button {
