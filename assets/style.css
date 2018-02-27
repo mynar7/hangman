@@ -6,7 +6,7 @@ body {
     color: white;
     font-family: Silkscreen;
     font-size: 20px;
-    min-width: 375px;
+    min-width: 370px;
     margin: 0 auto;
 }
 @font-face {
@@ -47,6 +47,7 @@ img {
 .keyboard {
     display: grid;
     width: 100%;
+    min-width: inherit;
 }
 .keyRow {
     margin: auto;
@@ -92,7 +93,7 @@ button:disabled {
 }
 @media screen and (max-width: 320px) {
     body {
-        min-width: none;
+        min-width: 320px;
     }
     button {
         width: 28px;
@@ -106,7 +107,6 @@ button:disabled {
 @media screen and (min-width: 650px) {
     body {
         font-size: 25px;
-        min-width: none;
     }
     h1{
         font-size: 75px;
