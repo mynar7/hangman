@@ -6,6 +6,11 @@ var hangman = {
     guesses: [],
     wins: 0,
     losses: 0,
+    lose: new Audio('./assets/sounds/lose.mp3'),
+    correct: new Audio('./assets/sounds/correct.mp3'),
+    wrong: new Audio('./assets/sounds/wrong.mp3'),
+    winSound: new Audio('./assets/sounds/win.mp3'),
+    
 
     //play method for initializing/resetting the game
     play: function() {
@@ -15,10 +20,12 @@ var hangman = {
         document.getElementById("define").setAttribute("disabled", "true");
         //enable skip
         document.getElementById("skip").removeAttribute("disabled");
-        //clear guesses
-        hangman.guesses = [];
         //clear guess array from board
+        hangman.guesses = [];
+        //clear guesses
         hangman.remainingGuesses = 10;
+        //clear wrong guesses
+        hangman.wrongGuesses = [];
         //reset image
         hangman.drawGallows();
         //reset guess count on page        
@@ -29,7 +36,7 @@ var hangman = {
         hangman.currentWord = hangman.getWord(hangman.words);        
         //get blanks to display
         var x = "_";
-        for (i = 0, j = hangman.currentWord.length - 1; i < j; i++) {
+        for (i = 0; i < hangman.currentWord.length - 1; i++) {
             x+="_";            
         }
         hangman.blankWord = x;
@@ -49,12 +56,13 @@ var hangman = {
         document.getElementById("skip").setAttribute("disabled", "true");
         if (str === "win") {
             //code for win
+            hangman.winSound.play();
             document.getElementById("gallows").setAttribute("src", "./assets/images/win.png");            
             hangman.wins++;
         } else {
             //code for loss
-            
             //show user what word was
+            hangman.lose.play();
             document.getElementById("current").innerHTML = hangman.addSpaces(hangman.currentWord);
             hangman.losses++;
         }
@@ -75,9 +83,9 @@ var hangman = {
         var char = hangman.guesses[hangman.guesses.length - 1];
         var changedLetters = 0;        
         //check guess char over each char in current[]
-        for(a = 0, b = current.length; a < b; a++) {
-            if (char == current[a]) {
-                blank[a] = current[a];
+        for(i = 0; i < current.length; i++) {
+            if (char == current[i]) {
+                blank[i] = current[i];
                 //if letter found, count it
                 changedLetters++;
             } //end if/else
@@ -85,18 +93,26 @@ var hangman = {
 
         //if no letters found, user guessed incorrectly
         if (changedLetters == 0) {
+            hangman.wrong.play();
             hangman.remainingGuesses--;
+            hangman.wrongGuesses.push(char);
             hangman.drawGallows();
-        }
+        } 
         //reconstruct blank guesses array into string
         var x = "";
-        for (i = 0, j = blank.length; i < j; i++) {
+        for (i = 0; i < blank.length; i++) {
             x += blank[i];            
         }       
         hangman.blankWord = x;
+
+        //if game isn't won and user guessed a letter, play 'correct' sound
+        if(hangman.blankWord !== hangman.currentWord && changedLetters > 0) {
+            hangman.correct.play();                                           
+        }
+
         //update board
         document.getElementById("current").innerHTML = hangman.addSpaces(hangman.blankWord);
-        document.getElementById("guesses").innerHTML = "Guesses: " + hangman.remainingGuesses + "<br>" + hangman.guesses;
+        document.getElementById("guesses").innerHTML = "Guesses: " + hangman.remainingGuesses + "<br>" + hangman.wrongGuesses;
         //check if won/lost
         if (hangman.blankWord === hangman.currentWord) {
             hangman.endGame("win");
@@ -104,16 +120,17 @@ var hangman = {
 
         if (hangman.remainingGuesses === 0) {
             hangman.endGame();
-        }
+        } 
+             
     },
 
     //function to add spaces between chars
     addSpaces: function(str) {
         var x = str.split("");
         var y = ""
-        for (i = 0, j = x.length; i < j; i++) {
+        for (i = 0; i < x.length; i++) {
             y += x[i];
-            if (i != j-1 ) {
+            if (i != x.length-1 ) {
                 y+= " ";
             }
         }
@@ -159,7 +176,7 @@ var hangman = {
     //enables all buttons
     resetBtns: function() {
         var x = document.getElementById("keys").querySelectorAll('button');
-        for (i = 0, j = x.length; i < j; i++) {
+        for (i = 0; i < x.length; i++) {
             x[i].removeAttribute("disabled");
         }
     },
@@ -167,7 +184,7 @@ var hangman = {
     //disables all buttons
     disableBtns: function() {
         var x = document.getElementById("keys").querySelectorAll('button');
-        for (i = 0, j = x.length; i < j; i++) {
+        for (i = 0; i < x.length; i++) {
             x[i].setAttribute("disabled", "true");
         }
     },
@@ -184,10 +201,9 @@ var hangman = {
 
 //new awesome way of grabbing clicked buttons
 var x = document.getElementById("keys").querySelectorAll("button");
-for (i = 0, j = x.length; i < j; i++){
+for (i = 0; i < x.length; i++){
     x[i].addEventListener('click', hangman.clickGuess);
 }
-
 //add listeners
 document.getElementById("play").onclick = hangman.play;
 document.getElementById("skip").onclick = hangman.endGame;
