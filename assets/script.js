@@ -93,7 +93,6 @@ var hangman = {
 
         //if no letters found, user guessed incorrectly
         if (changedLetters == 0) {
-            hangman.wrong.play();
             hangman.remainingGuesses--;
             hangman.wrongGuesses.push(char);
             hangman.drawGallows();
@@ -108,6 +107,11 @@ var hangman = {
         //if game isn't won and user guessed a letter, play 'correct' sound
         if(hangman.blankWord !== hangman.currentWord && changedLetters > 0) {
             hangman.correct.play();                                           
+        }
+
+        //if this guess doesn't lose and player guessed incorrectly, play 'wrong' sound
+        if(hangman.remainingGuesses !== 0 && changedLetters == 0) {
+            hangman.wrong.play();            
         }
 
         //update board
