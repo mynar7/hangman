@@ -167,7 +167,7 @@ var hangman = {
             var y = event.keyCode;
             
             //check if a-z with ASCII values
-            if ((y >= 65 && y <= 90) || (y >= 97 && y <= 122)) {
+            if (y >= 65 && y <= 90) {
                 //ensure pressed key is not already guessed
                 if (hangman.guesses.indexOf(x) == -1) {
                     hangman.guesses.push(x);
@@ -214,7 +214,7 @@ document.getElementById("skip").onclick = hangman.endGame;
 document.getElementById("define").onclick = function () {
     window.open('https://www.merriam-webster.com/dictionary/' + hangman.currentWord, "_blank");
 }
-document.onkeypress = hangman.keyGuess;
+document.onkeyup = hangman.keyGuess;
 
 //start game when document loads
 hangman.play();
