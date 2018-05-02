@@ -1,5 +1,7 @@
 # Hangman-Game
 
+##Overview
+
 For this project I used HTML, CSS, and Javascript (no bootstrap!) to create a hangman game website that can be played on desktop as well as PC.
 
 The game was designed for mobile first, and then upscaled to a desktop size using media queries in CSS. The images used for the hangman character were created with MS paint 3D.
@@ -9,3 +11,8 @@ For the graphics, css was used to hide the mobile keyboard when upscaled to desk
 The game picks a random word out of a 3000 word array and then checks user guesses against the randomly chosen word. After each user input, the game updates the board to show the user's guess as well as updates the blank spaces to reflect a correct guess, or the image to add parts to the hangman figure. If the user wins, the image is changed to a separate image of the hangman free of the gallows and giving an enthusiastic thumbs up for a job well done.
 
 Also, there is a skip and define button. "Skip" functions as a give up that instantly ends the game and displays the random word, also enabling the "define" button. "Define" takes the randomly chosen word and appends it to a URL string for merriam-webster's dictionary website, so that when the button is pressed it opens a new tab with the URL for that word's definition page.
+
+##Technologies
+* HTML5
+* CSS3
+* Javascript
