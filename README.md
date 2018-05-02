@@ -1,6 +1,6 @@
 # Hangman-Game
 
-##Overview
+## Overview
 
 For this project I used HTML, CSS, and Javascript (no bootstrap!) to create a hangman game website that can be played on desktop as well as PC.
 
@@ -12,7 +12,7 @@ The game picks a random word out of a 3000 word array and then checks user guess
 
 Also, there is a skip and define button. "Skip" functions as a give up that instantly ends the game and displays the random word, also enabling the "define" button. "Define" takes the randomly chosen word and appends it to a URL string for merriam-webster's dictionary website, so that when the button is pressed it opens a new tab with the URL for that word's definition page.
 
-##Technologies
+## Technologies
 * HTML5
 * CSS3
 * Javascript
